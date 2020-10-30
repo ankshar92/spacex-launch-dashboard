@@ -1,0 +1,45 @@
+@import "~src/variables.scss";
+
+.program-filters {
+  width: 100%;
+  min-width: 175px;
+  border-radius: 4px;
+  background-color: $white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  .program-sub-filter-title,
+  .program-sub-filter-value {
+    font-size: 0.9rem;
+  }
+
+  .program-sub-filter-title {
+    text-align: center;
+    border-bottom: 2px solid $border-gray;
+  }
+
+  .program-sub-filters {
+    display: flex;
+    flex-wrap: wrap;
+
+    .program-sub-filter-value {
+      width: 50%;
+
+      &:nth-child(2n) {
+        text-align: right;
+      }
+
+      span {
+        display: inline-block;
+        width: 66px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: $light-green;
+
+        &.active {
+          background-color: $dark-green;
+        }
+      }
+    }
+  }
+}

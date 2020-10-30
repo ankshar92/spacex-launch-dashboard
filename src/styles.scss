@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "arial";
+}
+
+// text alignment
+.text-center {
+  text-align: center;
+}
+
+// margin and padding
+@for $i from 0 through 4 {
+  .p-#{$i} {
+    padding: #{$i * 0.25}rem;
+  }
+
+  .px-#{$i} {
+    padding-left: #{$i * 0.25}rem;
+    padding-right: #{$i * 0.25}rem;
+  }
+
+  .py-#{$i} {
+    padding-top: #{$i * 0.25}rem;
+    padding-bottom: #{$i * 0.25}rem;
+  }
+
+  .m-#{$i} {
+    margin: #{$i * 0.25}rem;
+  }
+
+  .my-#{$i} {
+    margin-top: #{$i * 0.25}rem;
+    margin-bottom: #{$i * 0.25}rem;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i * 0.25}rem;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i * 0.25}rem;
+  }
+}
+
+.d-flex {
+  display: flex;
+}

@@ -1,0 +1,25 @@
+@import "~src/variables.scss";
+
+.card {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background-color: $white;
+}
+
+.program-image {
+  max-width: 100%;
+  background-color: $bg-gray;
+}
+
+.card-details {
+  color: $dark-blue;
+
+  .info-heading {
+    color: $black;
+  }
+
+  .mission-ids-list {
+    padding-left: 24px;
+  }
+}

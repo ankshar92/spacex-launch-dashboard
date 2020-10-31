@@ -1,7 +1,10 @@
 <div class="p-4 program-filters">
   <h4 id="program-filters-title" class="m-0">Filters</h4>
 
-  <section *ngFor="let programFilter of programFilters; trackBy: trackProgramFilter" class="px-1">
+  <section
+    *ngFor="let programFilter of programFilters; trackBy: trackProgramFilter"
+    class="px-1"
+  >
     <!-- TODO: make id dynamic for filters -->
     <div class="px-3 py-2">
       <p id="launch-year-filter" class="program-sub-filter-title m-0 py-1">
@@ -17,7 +20,13 @@
         *ngFor="let filter of programFilter.filters; trackBy: trackFilterValue"
         class="program-sub-filter-value mt-1 mb-1"
       >
-        <span class="px-4 py-2">
+        <span
+          class="px-4 py-2"
+          [ngClass]="{
+            active: isFilterApplied(programFilter.key, filter.value)
+          }"
+          (click)="applyFilter(filter, programFilter)"
+        >
           {{ filter.label }}
         </span>
       </div>

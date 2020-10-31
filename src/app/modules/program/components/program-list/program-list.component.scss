@@ -1,11 +1,62 @@
 .side-filters {
   width: 14%;
+  min-width: 175px;
 }
 
 .main-content {
   width: 86%;
+  display: flex;
+  flex-wrap: wrap;
 
   .program-card-section {
-    width: 25%;
+    width: 23%;
+  }
+}
+
+// small desktop view
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .side-filters {
+    width: 18%;
+  }
+
+  .main-content {
+    width: 82%;
+
+    .program-card-section {
+      width: 22%;
+    }
+  }
+}
+
+// tablet view
+@media (min-width: 701px) and (max-width: 1024px) {
+  .side-filters {
+    width: 27%;
+  }
+
+  .main-content {
+    width: 73%;
+
+    .program-card-section {
+      width: 46%;
+    }
+  }
+}
+
+// mobile view
+@media (max-width: 700px) {
+  .side-filters {
+    width: 100%;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0;
+
+    .program-card-section {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }

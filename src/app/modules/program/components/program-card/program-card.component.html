@@ -1,39 +1,59 @@
 <div class="card p-4">
-  <img
-    src="https://images2.imgbox.com/40/e3/GypSkayF_o.png"
-    alt="Avatar"
-    class="program-image"
-  />
+  <div class="text-center">
+    <img
+      [src]="program?.missionPatchSmall"
+      alt="Mission Patch for {{ program?.missionName }} #{{
+        program?.flightNumber
+      }}"
+      class="program-image"
+    />
+  </div>
 
   <div class="card-details">
-    <h4 class="mt-3 mb-4"><b>Falcon Sat#1</b></h4>
+    <h4 class="mt-3 mb-4">
+      <b>{{ program?.missionName }} #{{ program?.flightNumber }}</b>
+    </h4>
 
     <div>
-      <b id="mission-ids-{{ index }}" class="info-heading">Mission Ids:</b>
-      <ul attr.aria-labelledby="mission-ids-{{ index }}" class="mission-ids-list m-1">
-        <li>List 1</li>
-        <li>List 2</li>
-        <li>List 3</li>
+      <b id="mission-ids-{{ index }}" class="info-heading">Mission Ids: </b>
+      <ul
+        *ngIf="program?.missionId.length; else noMissionId"
+        attr.aria-labelledby="mission-ids-{{ index }}"
+        class="mission-ids-list m-1"
+      >
+        <li *ngFor="let id of program?.missionId; trackBy: id">{{ id }}</li>
       </ul>
+
+      <ng-template #noMissionId>
+        <span attr.aria-labelledby="mission-ids-{{ index }}"
+          >None</span
+        ></ng-template
+      >
     </div>
 
     <p class="my-2">
       <b id="launch-year-{{ index }}" class="info-heading">Launch Year: </b>
-      <span attr.aria-labelledby="launch-year-{{ index }}">2006</span>
+      <span attr.aria-labelledby="launch-year-{{ index }}">{{
+        program?.launchYear
+      }}</span>
     </p>
 
     <p class="my-2">
       <b id="successful-launch-{{ index }}" class="info-heading"
         >Successful Launch:
       </b>
-      <span attr.aria-labelledby="successful-launch-{{ index }}">false</span>
+      <span attr.aria-labelledby="successful-launch-{{ index }}">{{
+        getValue(program?.launchSuccess)
+      }}</span>
     </p>
 
     <p class="my-2">
       <b id="successful-landing-{{ index }}" class="info-heading"
         >Successful Landing:
       </b>
-      <span attr.aria-labelledby="successful-landing-{{ index }}">false</span>
+      <span attr.aria-labelledby="successful-landing-{{ index }}">{{
+        getValue(program?.landSuccess)
+      }}</span>
     </p>
   </div>
 </div>

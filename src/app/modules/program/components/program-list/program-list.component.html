@@ -2,20 +2,29 @@
   <h2>SpaceX Launch Programs</h2>
 </header>
 
-<div class="d-flex">
+<div class="d-flex flex-wrap">
   <aside class="side-filters">
     <app-program-filters
       [programFilters]="programFilters"
+      [appliedFilters]="appliedFilters"
+      (applyProgramFilter)="applyProgramFilter($event)"
     ></app-program-filters>
   </aside>
 
   <main class="main-content px-4">
-    <section class="program-card-section">
-      <app-program-card></app-program-card>
+    <section
+      class="program-card-section ml-4 mb-4"
+      *ngFor="
+        let launchProgram of state.launches;
+        index as id;
+        trackBy: trackLaunch
+      "
+    >
+      <app-program-card [id]="id" [program]="launchProgram"></app-program-card>
     </section>
   </main>
 </div>
 
 <footer class="text-center">
-  <p><b> Developed by: </b> Ankit Sharma</p>
+  <p><b> Developed by: </b> {{ author }}</p>
 </footer>

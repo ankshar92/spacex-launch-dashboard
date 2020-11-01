@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Application link
 
-[Link to the live application](https://ankitshar92-spacex.herokuapp.com/programs)
+[Link to the live application](https://ankitshar92-spacex.herokuapp.com)
 
 ## Development server
 

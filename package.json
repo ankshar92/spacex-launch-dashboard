@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/sapient-spacex/server/main.js",
     "build:ssr": "ng build --prod && ng run sapient-spacex:server:production",
     "prerender": "ng run sapient-spacex:prerender",
-    "start:heroku": "node dist/server/main.js",
+    "start:heroku": "node dist/sapient-spacex/server/main.js",
     "postbuild": "npm run build:ssr"
   },
   "private": true,

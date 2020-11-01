@@ -40,6 +40,7 @@ export class ProgramListComponent implements OnInit, OnDestroy {
     const sub = this.programStateService.state$.subscribe(
       (state: ProgramState) => {
         if (state.error) {
+          // window object can be injected using a service to make it unit testable
           alert(`Error occurred: ${state.error.message}`);
         }
         this.state = state;

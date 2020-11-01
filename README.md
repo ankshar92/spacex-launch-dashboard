@@ -62,7 +62,7 @@ The application is made responsive for mobile, tablet and desktop devices with t
 
 Unit tests have been written and a good code coverage is maintained. Below is the screenshot of the code coverage statistics.
 
-![Code Coverage Statistics](https://github.com/ankshar92/spacex-launch-dashboard/blob/readme/statistics/Unit%20Test%20Coverage.png?raw=true)
+![Code Coverage Statistics](https://github.com/ankshar92/spacex-launch-dashboard/blob/master/statistics/Unit%20Test%20Coverage.png?raw=true)
 
 ## Lighthouse Statistics
 

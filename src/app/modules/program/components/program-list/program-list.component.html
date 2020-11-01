@@ -2,6 +2,11 @@
   <h2>SpaceX Launch Programs</h2>
 </header>
 
+<!-- TODO: can be converted into a separate component -->
+<div *ngIf="loading" class="loader-cover">
+  <div class="loader"></div>
+</div>
+
 <div class="d-flex flex-wrap">
   <aside class="side-filters">
     <app-program-filters

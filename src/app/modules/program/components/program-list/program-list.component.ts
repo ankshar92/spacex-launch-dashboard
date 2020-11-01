@@ -23,6 +23,7 @@ export class ProgramListComponent implements OnInit, OnDestroy {
   public author = AUTHOR;
   public state: ProgramState;
   public appliedFilters: ProgramListFilters;
+  public loading = false;
 
   private subscriptions: Subscription[] = [];
 
@@ -36,9 +37,10 @@ export class ProgramListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.prepareFilters();
 
-    // TODO: show loader using HTTP interceptor
     const sub = this.programStateService.state$.subscribe(
       (state: ProgramState) => {
+        this.loading = false;
+
         if (state.error) {
           // window object can be injected using a service to make it unit testable
           alert(`Error occurred: ${state.error.message}`);
@@ -49,6 +51,7 @@ export class ProgramListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(sub);
 
     this.route.queryParamMap.subscribe((qp: any) => {
+      this.loading = true;
       this.appliedFilters = new ProgramListFilters(qp.params);
       this.programService.getPrograms(this.appliedFilters);
     });

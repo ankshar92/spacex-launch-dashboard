@@ -20,7 +20,6 @@ export class ProgramService {
     private state: ProgramStateService
   ) {}
 
-  // TODO: check any type
   public getPrograms(queryParams: ProgramListFilters): void {
     const params = new HttpParams({
       fromObject: {

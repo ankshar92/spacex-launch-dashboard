@@ -13,7 +13,7 @@
     "build:ssr": "ng build --prod && ng run sapient-spacex:server:production",
     "prerender": "ng run sapient-spacex:prerender",
     "start:heroku": "node dist/server",
-    "postinstall": "npm run build:ssr"
+    "postbuild": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
